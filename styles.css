@@ -1,3 +1,65 @@
 body{
     margin: 0;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+/* Top Bar */
+
+header{
+    text-align: center;
+    background-image: linear-gradient(to right, ivory,grey);
+}
+
+h1{
+    margin: 0;
+}
+
+/* Seed Colour & Scheme*/
+
+
+#seed-colour-select{
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 2px solid whitesmoke;
+    padding-bottom: 10px;
+}
+
+#seed-colour-input{
+    margin: 15px 20px;
+}
+
+#seed-colour-hex{
+    margin: 2px 10px 0 20px;
+    padding-top: 20px;
+}
+
+input[type="color"] {
+  width: 70px;
+  height: 40px;
+  box-sizing: border-box;
+}
+
+#scheme-drop-down{
+    margin: 22px 0 0 0;
+}
+
+#scheme-type, #get-scheme-btn{
+    padding: 10px 5px;
+    border: 1px solid #D1D5DB;
+    border-radius: 5px;
+}
+
+#get-scheme-btn{
+    margin: 15px 0 0 10px;
+    background-color: white;
+}
+
+
+/* Media Queries Responsive */
+
+@media(min-width: 550px){
+
+    #scheme-drop-down{
+    margin-top: 5px;
+}
 }
