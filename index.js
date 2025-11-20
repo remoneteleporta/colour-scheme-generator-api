@@ -14,12 +14,12 @@ window.addEventListener("load", ()=>{
 
 seedHexInput.addEventListener("input", function(){
      if (/^#([0-9A-F]{6})$/i.test(seedHexInput.value)) {
-        seedColourInput.value = seedHexInput.value
+        seedColourInput.value = DOMPurify.sanitize(seedHexInput.value)
     }
 })
 
 seedColourInput.addEventListener("input", function(){
-    seedHexInput.value = seedColourInput.value.toUpperCase()
+    seedHexInput.value = DOMPurify.sanitize(seedColourInput.value.toUpperCase())
 })
 
 /* Parameter Input & API fetch & Input Local Store */
@@ -28,7 +28,7 @@ getSchemeBtn.addEventListener("click", () => {
 
 localStorage.setItem("colourInput", JSON.stringify(seedColourInput.value))
 
-let hashlessHex = seedColourInput.value.replace('#','');
+let hashlessHex = DOMPurify.sanitize(seedColourInput.value.replace('#',''))
 let apiParameter = `hex=${hashlessHex}&mode=${schemeType.value}&count=5`
 
 fetch(`https://www.thecolorapi.com/scheme?${apiParameter}`)
